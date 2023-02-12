@@ -47,6 +47,7 @@ const Login = () => {
                     localStorage.setItem("name", data.name);
                     localStorage.setItem("authToken", data.authToken);
                     localStorage.setItem("userId", data.userId);
+                    console.log("userId", data.userId);
                     localStorage.setItem("authenticated", true);
                     if (JSON.parse(userType) === 'Res') {
                         router.push('/restaurant-dashboard')

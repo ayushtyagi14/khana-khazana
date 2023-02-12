@@ -7,7 +7,10 @@ const RestaurantDashboard = () => {
 
     const [userId, setUserId] = useState('')
 
+    const router = useRouter()
+
     const resDetails = async () => {
+
         var requestOptions = {
             method: 'GET',
             redirect: 'follow'
@@ -15,19 +18,28 @@ const RestaurantDashboard = () => {
 
         fetch(`https://khanakhazana-backend.onrender.com/api/res/resDetails/${userId}`, requestOptions)
             .then(response => response.text())
-            .then(result => console.log(result))
+            .then(result => {
+                const data = JSON.parse(result);
+                setResId(localStorage.setItem("resId", data.resId))
+            })
             .catch(error => console.log('error', error));
     }
 
     useEffect(() => {
-        setUserId('UserId', localStorage.getItem('userId'))
-        resDetails()
+        setUserId(localStorage.getItem('userId'))
     }, [])
+
+    useEffect(() => {
+        if (userId.length > 0) {
+            resDetails()
+        }
+    }, [userId])
 
     return (
         <>
-            <div>
-                THIS IS RESTAURANT DASHBOARD PAGE
+            <div className="text-center my-20 flex flex-col font-epilogue">
+                <button className="text-[30px] border py-3 px-2 mx-auto rounded-lg bg-[#09cc7f] text-white" onClick={() => router.push('/donate')}>Make a Donation!</button>
+                <button className="text-[30px] border py-3 px-2 mx-auto rounded-lg bg-black text-white mt-10" onClick={() => router.push('/restaurant-profile')}>Your Profile</button>
             </div>
         </>
     )

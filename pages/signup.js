@@ -52,8 +52,8 @@ const Signup = () => {
             .then(response => response.text(),)
             .then(result => {
                 const data = JSON.parse(result);
+                setLoading(false);
                 if (data.resCode === 200) {
-                    setLoading(false);
                     toast.success(
                         "Account Created Successfully",
                         {

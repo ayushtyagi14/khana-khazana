@@ -122,7 +122,7 @@ const Login = () => {
                         <span className="text-sm my-2 text-blue-800 cursor-pointer"
                             onClick={() => router.push('/signup')}
                         >
-                            Don't have an account?
+                            Don&apos;t have an account?
                         </span>
                     </div>
                     <div className="flex flex-col">

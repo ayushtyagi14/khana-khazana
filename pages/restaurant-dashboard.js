@@ -48,7 +48,7 @@ const RestaurantDashboard = () => {
 
             <div className="text-center my-10 flex flex-col font-epilogue">
                 <h2 className="text-2xl font-bold mb-8">Make a Difference Today</h2>
-                <p className="text-lg mb-16">"No act of kindness, no matter how small, is ever wasted." - Aesop</p>
+                <p className="text-lg mb-16">&quot;No act of kindness, no matter how small, is ever wasted.&quot; - Aesop</p>
                 <button className="text-2xl border py-3 px-8 mx-auto rounded-lg bg-[#09cc7f] text-white hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50 transition-colors mb-8" onClick={() => router.push('/donate')}>
                     Make a Donation
                 </button>

@@ -22,13 +22,13 @@ a {
 }
 
 .bg-image {
-  background-image: url("../public/background6.jpeg");
+  background-image: url("/background6.jpeg");
   background-size: cover;
   background-position: center;
 }
 
 .bg-login {
-  background-image: url("../public/background-login2.jpg");
+  background-image: url("/background-login2.jpg");
   background-size: cover;
   background-position: center;
 }

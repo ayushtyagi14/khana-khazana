@@ -39,9 +39,25 @@ const RestaurantDashboard = () => {
 
     return (
         <>
-            <div className="text-center my-20 flex flex-col font-epilogue">
-                <button className="text-[30px] border py-3 px-2 mx-auto rounded-lg bg-[#09cc7f] text-white" onClick={() => router.push('/donate')}>Make a Donation!</button>
-                <button className="text-[30px] border py-3 px-2 mx-auto rounded-lg bg-black text-white mt-10" onClick={() => router.push('/restaurant-profile')}>Your Profile</button>
+            <div className="flex justify-between items-center py-4 px-8 bg-[#09cc7f] text-white">
+                <img src="/temporary/assets/img/logo/logo.png" alt="logo" />
+                <button className="text-lg font-medium border py-2 px-4 rounded-lg bg-white text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 transition-colors" onClick={() => router.push('/login')}>
+                    Logout
+                </button>
+            </div>
+
+            <div className="text-center my-10 flex flex-col font-epilogue">
+                <h2 className="text-2xl font-bold mb-8">Make a Difference Today</h2>
+                <p className="text-lg mb-16">"No act of kindness, no matter how small, is ever wasted." - Aesop</p>
+                <button className="text-2xl border py-3 px-8 mx-auto rounded-lg bg-[#09cc7f] text-white hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50 transition-colors mb-8" onClick={() => router.push('/donate')}>
+                    Make a Donation
+                </button>
+                <button className="text-2xl border py-3 px-8 mx-auto rounded-lg bg-black text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 transition-colors mb-8" onClick={() => router.push('/restaurant-profile')}>
+                    Your Profile
+                </button>
+                <button className="text-2xl border py-3 px-8 mx-auto rounded-lg bg-gray-200 text-gray-800 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 transition-colors" onClick={() => router.push('/your-donations')}>
+                    Your Donations
+                </button>
             </div>
         </>
     )

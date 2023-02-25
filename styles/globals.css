@@ -20,3 +20,15 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.bg-image {
+  background-image: url("../public/background6.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-login {
+  background-image: url("../public/background-login2.jpg");
+  background-size: cover;
+  background-position: center;
+}

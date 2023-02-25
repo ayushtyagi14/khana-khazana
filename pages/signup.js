@@ -84,168 +84,171 @@ const Signup = () => {
 
     return (
         <>
-            <div className='my-20 text-center border mx-auto md:w-1/2 flex flex-col items-center font-epilogue'>
-                <h1 className='text-[30px]'>SIGN UP</h1>
-                <form
-                    className="flex flex-col justify-center space-y-5 md:w-[80%] w-full rounded-lg p-7"
-                    onSubmit={(event) => handleSubmit(event)}
-                >
-                    <div className="flex flex-col">
-                        <label>
-                            Name:
-                            <span className="text-red-500 font-bold">
-                                *
-                            </span>
-                        </label>
-                        <input
-                            type="text"
-                            className="border rounded px-4 py-2"
-                            placeholder="Enter your company name"
-                            id="name"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleInputChange}
-                            required
-                        />
-                    </div>
-                    <div className="flex flex-col">
-                        <label>
-                            Email:
-                            <span className="text-red-500 font-bold">
-                                *
-                            </span>
-                        </label>
-                        <input
-                            type="email"
-                            className="border rounded px-4 py-2"
-                            placeholder="Enter your email"
-                            id="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleInputChange}
-                            required
-                        />
-                    </div>
-                    <div className="flex flex-col">
-                        <label>
-                            Address:
-                            <span className="text-red-500 font-bold">
-                                *
-                            </span>
-                        </label>
-                        <input
-                            type="text"
-                            className="border rounded px-4 py-2"
-                            placeholder="Enter your Address"
-                            id="address"
-                            name="address"
-                            value={formData.address}
-                            onChange={handleInputChange}
-                            required
-                        />
-                    </div>
-                    <div className="flex flex-col">
-                        <label>
-                            Area:
-                            <span className="text-red-500 font-bold">
-                                *
-                            </span>
-                        </label>
-                        <input
-                            type="text"
-                            className="border rounded px-4 py-2"
-                            placeholder="Enter your Area"
-                            id="area"
-                            name="area"
-                            value={formData.area}
-                            onChange={handleInputChange}
-                            required
-                        />
-                    </div>
-                    <div className="flex flex-col">
-                        <label>
-                            Phone Number:
-                            <span className="text-red-500 font-bold">
-                                *
-                            </span>
-                        </label>
-                        <input
-                            type="number"
-                            className="border rounded px-4 py-2"
-                            placeholder="Enter your phone number"
-                            id="mobileNumber"
-                            name="mobileNumber"
-                            value={formData.mobileNumber}
-                            onChange={handleInputChange}
-                            onWheel={(e) => e.target.blur()}
-                            required
-                        />
-                    </div>
-                    <div className="flex flex-col">
-                        <label>
-                            User Type:
-                            <span className="text-red-500 font-bold">
-                                *
-                            </span>
-                        </label>
-                        <div className="flex flex-row items-center justify-between">
-                            <div className="flex items-center">
-                                <input
-                                    type="radio"
-                                    id="Res"
-                                    name="userType"
-                                    value="Res"
-                                    checked={formData.userType === 'Res'}
-                                    onChange={handleInputChange}
-                                    className="mr-2"
-                                />
-                                <label htmlFor="restaurant" className="text-sm font-medium">Restaurant</label>
-                            </div>
-                            <div className="flex items-center">
-                                <input
-                                    type="radio"
-                                    id="ngo"
-                                    name="userType"
-                                    value="NGO"
-                                    checked={formData.userType === 'NGO'}
-                                    onChange={handleInputChange}
-                                    className="mr-2"
-                                />
-                                <label htmlFor="ngo" className="text-sm font-medium">NGO</label>
+            <div className="bg-login min-h-screen py-10">
+                <div className='text-center border mx-auto md:w-[38%] w-90% flex flex-col items-center font-epilogue bg-white rounded-xl'>
+                    <img src="/temporary/assets/img/logo/logo.png" alt="logo" />
+                    <h1 className='text-[30px] mt-5'>SIGN UP</h1>
+                    <form
+                        className="flex flex-col justify-center space-y-5 w-full rounded-lg p-7"
+                        onSubmit={(event) => handleSubmit(event)}
+                    >
+                        <div className="flex flex-col">
+                            <label>
+                                Name:
+                                <span className="text-red-500 font-bold">
+                                    *
+                                </span>
+                            </label>
+                            <input
+                                type="text"
+                                className="border rounded px-4 py-2"
+                                placeholder="Enter your company name"
+                                id="name"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleInputChange}
+                                required
+                            />
+                        </div>
+                        <div className="flex flex-col">
+                            <label>
+                                Email:
+                                <span className="text-red-500 font-bold">
+                                    *
+                                </span>
+                            </label>
+                            <input
+                                type="email"
+                                className="border rounded px-4 py-2"
+                                placeholder="Enter your email"
+                                id="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleInputChange}
+                                required
+                            />
+                        </div>
+                        <div className="flex flex-col">
+                            <label>
+                                Address:
+                                <span className="text-red-500 font-bold">
+                                    *
+                                </span>
+                            </label>
+                            <input
+                                type="text"
+                                className="border rounded px-4 py-2"
+                                placeholder="Enter your Address"
+                                id="address"
+                                name="address"
+                                value={formData.address}
+                                onChange={handleInputChange}
+                                required
+                            />
+                        </div>
+                        <div className="flex flex-col">
+                            <label>
+                                Area:
+                                <span className="text-red-500 font-bold">
+                                    *
+                                </span>
+                            </label>
+                            <input
+                                type="text"
+                                className="border rounded px-4 py-2"
+                                placeholder="Enter your Area"
+                                id="area"
+                                name="area"
+                                value={formData.area}
+                                onChange={handleInputChange}
+                                required
+                            />
+                        </div>
+                        <div className="flex flex-col">
+                            <label>
+                                Phone Number:
+                                <span className="text-red-500 font-bold">
+                                    *
+                                </span>
+                            </label>
+                            <input
+                                type="number"
+                                className="border rounded px-4 py-2"
+                                placeholder="Enter your phone number"
+                                id="mobileNumber"
+                                name="mobileNumber"
+                                value={formData.mobileNumber}
+                                onChange={handleInputChange}
+                                onWheel={(e) => e.target.blur()}
+                                required
+                            />
+                        </div>
+                        <div className="flex flex-col">
+                            <label>
+                                User Type:
+                                <span className="text-red-500 font-bold">
+                                    *
+                                </span>
+                            </label>
+                            <div className="flex flex-row items-center justify-between">
+                                <div className="flex items-center">
+                                    <input
+                                        type="radio"
+                                        id="Res"
+                                        name="userType"
+                                        value="Res"
+                                        checked={formData.userType === 'Res'}
+                                        onChange={handleInputChange}
+                                        className="mr-2"
+                                    />
+                                    <label htmlFor="restaurant" className="text-sm font-medium">Restaurant</label>
+                                </div>
+                                <div className="flex items-center">
+                                    <input
+                                        type="radio"
+                                        id="ngo"
+                                        name="userType"
+                                        value="NGO"
+                                        checked={formData.userType === 'NGO'}
+                                        onChange={handleInputChange}
+                                        className="mr-2"
+                                    />
+                                    <label htmlFor="ngo" className="text-sm font-medium">NGO</label>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="flex flex-col">
-                        <label>
-                            Password:
-                            <span className="text-red-500 font-bold">
-                                *
-                            </span>
-                        </label>
-                        <input
-                            type="password"
-                            className="border rounded px-4 py-2"
-                            placeholder="Enter your password"
-                            name="password"
-                            value={formData.password}
-                            onChange={handleInputChange}
-                            required
-                        />
-                    </div>
-                    <div className="flex justify-center">
-                        {loading ? (
-                            <FaSpinner className="animate-spin" />
-                        ) : (
-                            <button
-                                type="submit"
-                                className="py-1 px-7 text-white font-bold bg-[#09cc7f] border rounded hover:text-[#09cc7f] hover:bg-white"
-                            >
-                                <span>Sign Up</span>
-                            </button>
-                        )}
-                    </div>
-                </form>
-                <p className='mb-10'>Already have an account? <span className=' text-blue-800 cursor-pointer' onClick={() => router.push('/login')}>LogIn</span></p>
+                        <div className="flex flex-col">
+                            <label>
+                                Password:
+                                <span className="text-red-500 font-bold">
+                                    *
+                                </span>
+                            </label>
+                            <input
+                                type="password"
+                                className="border rounded px-4 py-2"
+                                placeholder="Enter your password"
+                                name="password"
+                                value={formData.password}
+                                onChange={handleInputChange}
+                                required
+                            />
+                        </div>
+                        <div className="flex justify-center">
+                            {loading ? (
+                                <FaSpinner className="animate-spin" />
+                            ) : (
+                                <button
+                                    type="submit"
+                                    className="py-1 px-7 text-white font-bold bg-[#09cc7f] border rounded hover:text-[#09cc7f] hover:bg-white"
+                                >
+                                    <span>Sign Up</span>
+                                </button>
+                            )}
+                        </div>
+                    </form>
+                    <p className='mb-10'>Already have an account? <span className=' text-blue-800 cursor-pointer' onClick={() => router.push('/login')}>LogIn</span></p>
+                </div>
             </div>
         </>
     )

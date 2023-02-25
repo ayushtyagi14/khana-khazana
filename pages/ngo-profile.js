@@ -51,6 +51,13 @@ const NgoProfile = () => {
 
     return (
         <>
+            <div className="flex justify-between items-center py-4 px-8 bg-[#09cc7f] text-white">
+                <img src="/temporary/assets/img/logo/logo.png" alt="logo" />
+                <button className="text-lg font-medium border py-2 px-4 rounded-lg bg-white text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 transition-colors" onClick={() => router.push('/login')}>
+                    Logout
+                </button>
+            </div>
+
             <button className="ml-3 mt-2" onClick={() => router.push('/ngo-dashboard')}>
                 Back to Dashboard
             </button>

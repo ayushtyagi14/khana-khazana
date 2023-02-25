@@ -62,14 +62,19 @@ const Donate = () => {
 
     return (
         <>
-            <div className='my-20 text-center border mx-auto md:w-1/2 flex flex-col items-center font-epilogue'>
-                <h1 className='text-[30px]'>Make a Donation!</h1>
+            <div className='my-20 text-center border mx-auto md:w-1/2 flex flex-col items-center font-epilogue bg-white rounded-lg shadow-lg'>
+                <div className="absolute top-2 left-2">
+                    <button className="text-[20px] py-2 px-2 mx-auto rounded-lg hover:text-[#09cc7f]" onClick={() => router.push('/restaurant-dashboard')}>
+                        Back to Dashboard
+                    </button>
+                </div>
+                <h1 className='text-[30px] text-[#09cc7f] font-bold py-6'>Make a Donation!</h1>
                 <form
-                    className="flex flex-col justify-center space-y-5 md:w-[80%] w-full rounded-lg p-7"
+                    className="flex flex-col justify-center space-y-5 md:w-[80%] w-full p-7"
                     onSubmit={handleSubmit}
                 >
                     <div className="flex flex-col my-2">
-                        <label>
+                        <label className='text-gray-700'>
                             Upload Food Image:
                             <span className="text-red-500 font-bold">
                                 *
@@ -85,7 +90,7 @@ const Donate = () => {
                         />
                     </div>
                     <div className="flex flex-col my-2">
-                        <label>
+                        <label className='text-gray-700'>
                             Food Type:
                             <span className="text-red-500 font-bold">
                                 *
@@ -127,7 +132,7 @@ const Donate = () => {
                             </div>
                         </div>
                         <div className="flex flex-col my-5">
-                            <label>
+                            <label className='text-gray-700'>
                                 Food Quantity (in Kgs):
                                 <span className="text-red-500 font-bold">
                                     *

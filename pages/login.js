@@ -66,78 +66,78 @@ const Login = () => {
             .catch(error => console.log('error', error));
     };
 
-    useEffect(() => {
-        // setDashboardType(localStorage.getItem("userType"));
-    }, [])
-
     return (
         <>
-            <div className='my-20 text-center border mx-auto md:w-1/2 flex flex-col items-center font-epilogue'>
-                <h1 className='text-[30px]'>LogIn</h1>
-                <form
-                    className="flex flex-col justify-center space-y-5 md:w-[80%] w-full rounded-lg p-7"
-                    onSubmit={handleSubmit}
-                >
-                    <div className="flex flex-col">
-                        <label>
-                            Email:
-                            <span className="text-red-500 font-bold">
-                                *
-                            </span>
-                        </label>
-                        <input
-                            type="email"
-                            className="border rounded px-4 py-2"
-                            placeholder="Enter your email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleInputChange}
-                            required
-                        />
-                    </div>
-                    <div className="flex flex-col">
-                        <label>
-                            Password:
-                            <span className="text-red-500 font-bold">
-                                *
-                            </span>
-                        </label>
-                        <input
-                            type="password"
-                            className="border rounded px-4 py-2"
-                            placeholder="Enter your password"
-                            name="password"
-                            value={formData.password}
-                            onChange={handleInputChange}
-                            required
-                        />
-                        <span className="text-sm my-2 text-blue-800 cursor-pointer"
-                        // onClick={() => router.push('/forgot_password')}
-                        >
-                            Forgot password?
-                        </span>
-                        <span className="text-sm my-2 text-blue-800 cursor-pointer"
-                            onClick={() => router.push('/signup')}
-                        >
-                            Don&apos;t have an account?
-                        </span>
-                    </div>
-                    <div className="flex flex-col">
-
-                    </div>
-                    <div className="flex justify-center">
-                        {loading ? (
-                            <FaSpinner className="animate-spin" />
-                        ) : (
-                            <button
-                                type="submit"
-                                className="py-1 px-7 text-white font-bold bg-[#09cc7f] border rounded hover:text-[#09cc7f] hover:bg-white"
+            <div className="bg-login min-h-screen pt-10">
+                <div className='text-center border mx-auto md:w-[30%] w-[90%] flex flex-col items-center font-epilogue bg-white rounded-xl pt-5'>
+                    <img src="/temporary/assets/img/logo/logo.png" alt="logo" />
+                    <h1 className='text-[30px] mt-3'>Welcome</h1>
+                    <p className="text-[14px] text-[#999999]">Please login to Continue</p>
+                    <form
+                        className="flex flex-col justify-center space-y-5 w-full rounded-lg p-7"
+                        onSubmit={handleSubmit}
+                    >
+                        <div className="flex flex-col">
+                            <label>
+                                Email:
+                                <span className="text-red-500 font-bold">
+                                    *
+                                </span>
+                            </label>
+                            <input
+                                type="email"
+                                className="border rounded px-4 py-2"
+                                placeholder="Enter your email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleInputChange}
+                                required
+                            />
+                        </div>
+                        <div className="flex flex-col">
+                            <label>
+                                Password:
+                                <span className="text-red-500 font-bold">
+                                    *
+                                </span>
+                            </label>
+                            <input
+                                type="password"
+                                className="border rounded px-4 py-2"
+                                placeholder="Enter your password"
+                                name="password"
+                                value={formData.password}
+                                onChange={handleInputChange}
+                                required
+                            />
+                            <span className="text-sm my-2 text-blue-800 cursor-pointer"
+                            // onClick={() => router.push('/forgot_password')}
                             >
-                                <span>LogIn</span>
-                            </button>
-                        )}
-                    </div>
-                </form>
+                                Forgot password?
+                            </span>
+                            <span className="text-sm my-2 text-blue-800 cursor-pointer"
+                                onClick={() => router.push('/signup')}
+                            >
+                                Don&apos;t have an account?
+                            </span>
+                        </div>
+                        <div className="flex flex-col">
+
+                        </div>
+                        <div className="flex justify-center">
+                            {loading ? (
+                                <FaSpinner className="animate-spin" />
+                            ) : (
+                                <button
+                                    type="submit"
+                                    className="py-1 px-7 text-white font-bold bg-[#09cc7f] border rounded hover:text-[#09cc7f] hover:bg-white"
+                                >
+                                    <span>LogIn</span>
+                                </button>
+                            )}
+                        </div>
+                    </form>
+                </div>
             </div>
         </>
     )

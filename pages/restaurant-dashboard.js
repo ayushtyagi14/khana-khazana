@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 const RestaurantDashboard = () => {
 
     const [userId, setUserId] = useState('')
+    const [resId, setResId] = useState('')
 
     const router = useRouter()
 
@@ -20,6 +21,7 @@ const RestaurantDashboard = () => {
             .then(response => response.text())
             .then(result => {
                 const data = JSON.parse(result);
+                console.log(data);
                 setResId(localStorage.setItem("resId", data.resId))
             })
             .catch(error => console.log('error', error));

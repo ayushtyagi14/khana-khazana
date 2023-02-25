@@ -11,7 +11,6 @@ const Login = () => {
     const [formData, setFormData] = useState({
         email: '',
         password: '',
-        userType: ''
     });
 
     const handleInputChange = (event) => {
@@ -25,9 +24,7 @@ const Login = () => {
         event.preventDefault();
         setLoading(true)
 
-        const userType = localStorage.getItem('userType');
-        const formDataWithUserType = { ...formData, userType };
-        const raw = JSON.stringify(formDataWithUserType);
+        const raw = JSON.stringify(formData);
 
         const requestOptions = {
             method: 'POST',
@@ -49,9 +46,9 @@ const Login = () => {
                     localStorage.setItem("userId", data.userId);
                     console.log("userId", data.userId);
                     localStorage.setItem("authenticated", true);
-                    if (JSON.parse(userType) === 'Res') {
+                    if (data.userType === 'Res') {
                         router.push('/restaurant-dashboard')
-                    } else if (JSON.parse(userType) === 'NGO') {
+                    } else if (data.userType === 'NGO') {
                         router.push('/ngo-dashboard')
                     }
                     console.log(data.message)

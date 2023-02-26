@@ -64,9 +64,27 @@ const NgoDashboard = () => {
             .catch(error => console.log('error', error));
     }
 
+    const logout = () => {
+        if (typeof window !== "undefined") {
+            localStorage.setItem("authenticated", false);
+            localStorage.setItem("isNgo", false);
+            localStorage.setItem("isRes", false);
+            window.localStorage.clear();
+            router.push("/login");
+        }
+    };
+
+
     return (
         <>
             <div className="bg-image min-h-screen">
+                <div className="flex flex-col justify-between items-end pt-1 px-5 text-white">
+                    <button className="text-lg font-medium border py-2 px-4 rounded-lg bg-white text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 transition-colors"
+                        onClick={logout}
+                    >
+                        Logout
+                    </button>
+                </div>
                 <div className="flex flex-col items-center">
                     <button className="text-[20px] border py-2 px-2 mx-auto rounded-lg bg-black text-white mt-5" onClick={() => router.push('/ngo-profile')}>Your Profile</button>
                     <div className="my-5 pt-3 text-center rounded-2xl shadow-xl mx-auto md:w-1/2 flex flex-col items-center font-epilogue bg-[#ecfff7]">

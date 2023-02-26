@@ -51,11 +51,21 @@ const RestaurantProfile = () => {
         }
     }, [userId])
 
+    const logout = () => {
+        if (typeof window !== "undefined") {
+            localStorage.setItem("authenticated", false);
+            localStorage.setItem("isNgo", false);
+            localStorage.setItem("isRes", false);
+            window.localStorage.clear();
+            router.push("/login");
+        }
+    };
+
     return (
         <>
             <div className="flex justify-between items-center py-4 px-8 bg-[#09cc7f] text-white">
                 <img src="/temporary/assets/img/logo/logo.png" alt="logo" />
-                <button className="text-lg font-medium border py-2 px-4 rounded-lg bg-white text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 transition-colors" onClick={() => router.push('/login')}>
+                <button className="text-lg font-medium border py-2 px-4 rounded-lg bg-white text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 transition-colors" onClick={logout}>
                     Logout
                 </button>
             </div>
@@ -63,13 +73,38 @@ const RestaurantProfile = () => {
             <button className="ml-3 mt-2" onClick={() => router.push('/restaurant-dashboard')}>
                 Back to Dashboard
             </button>
-            <div className="my-20 w-[80%] mx-auto font-epilogue flex flex-col items-center">
-                <h1 className="text-[40px]"> {name}</h1>
-                <h1 className="my-3">Email: {email}</h1>
-                <h1 className="my-3">Contact Number: {mobileNumber}</h1>
-                <p className="my-3">Address: {address}</p>
-                <p className="my-3">Area: {area}</p>
-                <span className="my-3">Ratings: {ratings}⭐</span>
+            <div className="grid grid-rows-2 border items-center w-[50%] h-[350px] mx-auto shadow-2xl">
+                <div className="border-b pb-2">
+                    <h1 className="font-epilogue text-[40px] font-bold text-[#303735] text-center mb-5"> {name}
+                    </h1>
+                </div>
+                <div className="pb-5">
+                    <h1 className="my-3 flex flex-row justify-between mx-5">Email:
+                        <span>
+                            {email}
+                        </span>
+                    </h1>
+                    <h1 className="my-3 flex flex-row justify-between mx-5">Contact Number:
+                        <span>
+                            {mobileNumber}
+                        </span>
+                    </h1>
+                    <p className="my-3 flex flex-row justify-between mx-5">Address:
+                        <span>
+                            {address}
+                        </span>
+                    </p>
+                    <p className="my-3 flex flex-row justify-between mx-5">Area:
+                        <span>
+                            {area}
+                        </span>
+                    </p>
+                    <span className="my-3 flex flex-row justify-between mx-5">Ratings:
+                        <span>
+                            {ratings}⭐
+                        </span>
+                    </span>
+                </div>
             </div>
         </>
     )

@@ -27,6 +27,16 @@ const RestaurantDashboard = () => {
             .catch(error => console.log('error', error));
     }
 
+    const logout = () => {
+        if (typeof window !== "undefined") {
+            localStorage.setItem("authenticated", false);
+            localStorage.setItem("isNgo", false);
+            localStorage.setItem("isRes", false);
+            window.localStorage.clear();
+            router.push("/login");
+        }
+    };
+
     useEffect(() => {
         setUserId(localStorage.getItem('userId'))
     }, [])
@@ -41,7 +51,7 @@ const RestaurantDashboard = () => {
         <>
             <div className="flex justify-between items-center py-4 px-8 bg-[#09cc7f] text-white">
                 <img src="/temporary/assets/img/logo/logo.png" alt="logo" />
-                <button className="text-lg font-medium border py-2 px-4 rounded-lg bg-white text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 transition-colors" onClick={() => router.push('/login')}>
+                <button className="text-lg font-medium border py-2 px-4 rounded-lg bg-white text-gray-800 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 transition-colors" onClick={logout}>
                     Logout
                 </button>
             </div>

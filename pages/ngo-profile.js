@@ -61,12 +61,33 @@ const NgoProfile = () => {
             <button className="ml-3 mt-2" onClick={() => router.push('/ngo-dashboard')}>
                 Back to Dashboard
             </button>
-            <div className="my-20 w-[80%] mx-auto font-epilogue flex flex-col items-center">
-                <h1 className="text-[40px]"> {name}</h1>
-                <h1 className="my-3">Email: {email}</h1>
-                <h1 className="my-3">Contact Number: {mobileNumber}</h1>
-                <p className="my-3">Address: {address}</p>
-                <p className="my-3">Area: {area}</p>
+            <div className="grid grid-rows-2 border items-center w-[50%] h-[350px] mx-auto shadow-2xl">
+                <div className="border-b pb-2">
+                    <h1 className="font-epilogue text-[40px] font-bold text-[#303735] text-center mb-5"> {name}
+                    </h1>
+                </div>
+                <div className="pb-5">
+                    <h1 className="my-3 flex flex-row justify-between mx-5">Email:
+                        <span>
+                            {email}
+                        </span>
+                    </h1>
+                    <h1 className="my-3 flex flex-row justify-between mx-5">Contact Number:
+                        <span>
+                            {mobileNumber}
+                        </span>
+                    </h1>
+                    <p className="my-3 flex flex-row justify-between mx-5">Address:
+                        <span>
+                            {address}
+                        </span>
+                    </p>
+                    <p className="my-3 flex flex-row justify-between mx-5">Area:
+                        <span>
+                            {area}
+                        </span>
+                    </p>
+                </div>
             </div>
         </>
     )

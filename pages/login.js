@@ -7,6 +7,9 @@ const Login = () => {
     const router = useRouter()
 
     const [loading, setLoading] = useState(false);
+    const [isAuthenticated, setIsAuthentcated] = useState(false);
+    const [isNgo, setIsNgo] = useState(false);
+    const [isRes, setIsRes] = useState(false);
 
     const [formData, setFormData] = useState({
         email: '',
@@ -48,8 +51,12 @@ const Login = () => {
                     localStorage.setItem("authenticated", true);
                     if (data.userType === 'Res') {
                         router.push('/restaurant-dashboard')
+                        localStorage.setItem("isRes", true)
+                        localStorage.removeItem("isNgo")
                     } else if (data.userType === 'NGO') {
                         router.push('/ngo-dashboard')
+                        localStorage.setItem("isNgo", true)
+                        localStorage.removeItem("isRes")
                     }
                     console.log(data.message)
                 }
@@ -65,6 +72,21 @@ const Login = () => {
             })
             .catch(error => console.log('error', error));
     };
+
+    useEffect(() => {
+        setIsAuthentcated(localStorage.getItem('authenticated'))
+        setIsRes(localStorage.getItem('isRes'))
+        setIsNgo(localStorage.getItem('isNgo'))
+    }, [])
+
+    if (isAuthenticated) {
+        if (isNgo) {
+            router.push('/ngo-dashboard');
+        }
+        else if (isRes) {
+            router.push('/restaurant-dashboard')
+        }
+    }
 
     return (
         <>

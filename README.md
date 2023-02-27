@@ -2,6 +2,7 @@
 ###Introduction
 The Food Donation Website is a platform to connect food businesses with surplus food to non-profit organizations (NGOs) and other social initiatives working to alleviate hunger and food insecurity. This website is aimed to reduce food waste and help those in need by connecting food businesses with organizations that are looking for food donations.
 
+
 Features
 Food donation: Food businesses can easily donate their surplus food to NGOs and social initiatives registered on the platform.
 
